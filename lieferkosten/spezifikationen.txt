@@ -1,0 +1,25 @@
+Gesucht ist ein Algorithmus der je nach Gewicht, Volumen und Tarif die Lieferkosten berechnet.
+
+Tarife:
+	- normal
+		bis 3,00 kg:        7,90 EUR
+		über 10,00 kg:        11,50 EUR
+
+	- prime time
+		bis 3,00 kg        14,20 EUR
+		über 10,00 kg        17,50 EUR
+
+Volumen (nicht vom Tarif abhängig):			
+
+	0-10 m3		+ 1 EUR pro m3		
+	über 10 m3 	+ 2 EUR pro m3
+
+Aufruf:
+
+Delivery(['normal', 'prime'], gewicht, volumen)
+
+Ergebnis:
+
+Delivery.getTotalCosts()
+
+Es wird ein EUR Betrag geliefert.
