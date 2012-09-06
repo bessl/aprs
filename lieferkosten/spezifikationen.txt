@@ -3,11 +3,11 @@ Gesucht ist ein Algorithmus der je nach Gewicht, Volumen und Tarif die Lieferkos
 Tarife:
 	- normal
 		bis 3,00 kg:        7,90 EUR
-		über 10,00 kg:        11,50 EUR
+		über 3,00 kg:        11,50 EUR
 
 	- prime time
 		bis 3,00 kg        14,20 EUR
-		über 10,00 kg        17,50 EUR
+		über 3,00 kg        17,50 EUR
 
 Volumen (nicht vom Tarif abhängig):			
 
