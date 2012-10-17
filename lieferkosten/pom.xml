@@ -2,11 +2,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>at.bernhardessl.app</groupId>
-  <artifactId>lieferkosten</artifactId>
-  <version>1.0</version>
+  <groupId>at.bernhardessl</groupId>
+  <artifactId>Lieferkosten</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
   <name>Lieferkosten</name>
-  <description>berechnet die anfallende Lieferkosten</description>
+  <url>https://github.com/bessl/aprs/tree/master/lieferkosten</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,57 +22,54 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-    <build>
-    <plugins>
 
+  <build>
+    <plugins>
+      <!--  compiler settings (source 1.7, target 1.6): mvn compile -->
       <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-site-plugin</artifactId>
-      <configuration>
-        <reportPlugins>
-            <!--  JavaDoc Generierung: mvn javadoc:javadoc -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+              <source>1.6</source>
+              <target>1.6</target>
+              <showDeprecation>true</showDeprecation>
+              <showWarnings>true</showWarnings>
+              <executable>/usr/bin/javac</executable>
+              <fork>true</fork>
+          </configuration>
+      </plugin>
       <plugin>
+        <!--  JavaDoc Generierung: mvn javadoc:javadoc -->
+        <!-- file:///Users/bee/Desktop/schule/aprs/mavenhafen/Lieferkosten/target/site/apidocs/index-all.html -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9</version>
         <configuration>
         </configuration>
       </plugin>
-            <!-- findbugs: mvn test site -->
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-          </plugin>
-        </reportPlugins>
-      </configuration>
-    </plugin>
-      
-    </plugins>
-    </build>
-
-<!--  jdepend: mvn site:site -->
-<reporting>
-    <plugins>
+      <!-- findbugs: mvn test site -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+      </plugin>
+      <!--  jdepend: mvn site:site -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>jdepend-maven-plugin</artifactId>
       </plugin>
-    </plugins>
-  </reporting>
-    
-  <!-- 
-    <build>
-     <plugins>
       <plugin>
+      <!-- emma: mvn emma:emma -->
+      <!-- file:///Users/bee/Desktop/schule/aprs/mavenhafen/Lieferkosten/target/site/emma/index.html -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>emma-maven-plugin</artifactId>
+        <version>1.0-alpha-3</version>
+      </plugin>
+      <plugin>
+      <!-- checkstyle: mvn checkstyle:checkstyle -->
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5.1</version>
-        <configuration>
-          <source>1.4</source>
-          <target>1.4</target>
-        </configuration>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.9.1</version>
       </plugin>
     </plugins>
   </build>
-   -->
 </project>
